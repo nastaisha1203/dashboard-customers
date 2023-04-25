@@ -1,15 +1,18 @@
 import sprite from 'img/sprite.svg';
-import { SearchButton, SearchForm, SearchInput } from './SearchBar.styled';
+import { SearchForm, SearchInput } from './SearchBar.styled';
 
-export const SearchBar = () => {
+export const SearchBar = ({ onChange, searchTerm }) => {
   return (
     <SearchForm>
-      <SearchButton type="submit" aria-label="Search">
-        <svg>
-          <use href={sprite + '#icon-search-1'} />
-        </svg>
-      </SearchButton>
-      <SearchInput type="text" placeholder="Search" />
+      <svg>
+        <use href={sprite + '#icon-search-1'} />
+      </svg>
+      <SearchInput
+        type="text"
+        placeholder="Search"
+        value={searchTerm}
+        onChange={onChange}
+      />
     </SearchForm>
   );
 };

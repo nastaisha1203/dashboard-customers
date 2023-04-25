@@ -24,8 +24,8 @@ export const Layout = styled.div`
   }
   @media screen and (min-width: 1440px) {
     width: 1440px;
-    padding-left: 100px;
-    padding-right: 100px;
+    margin: 0;
+    padding: 0;
   }
 `;
 export const Button = styled.button`
@@ -78,6 +78,9 @@ export const SectionModal = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
+export const Container = styled.div`
+  padding-bottom: 38px;
+`;
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
@@ -92,4 +95,17 @@ export const Text = styled.div`
   @media screen and (min-width: 768px) {
     font-size: 22px;
   }
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 51px;
+    font-size: 24px;
+  }
 `;
+export const DesktopDisplay = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+export const CustomersSection = styled.div`
+  flex-grow: 1;
+  padding: 41px 95px 258px 71px;
+`;
+export const AppbarSection = styled.div``;

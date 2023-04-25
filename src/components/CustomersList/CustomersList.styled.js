@@ -17,11 +17,12 @@ export const CardList = styled.ul`
   }
 `;
 export const Card = styled.li`
-  width: 300px;
-  padding: 8px 14px;
+  width: 270px;
+  padding: 8px 8px 8px 18px;
   border-bottom: 2px solid #eeeeee;
-  /* @media screen and (min-width: 768px) {
-  } */
+  @media screen and (min-width: 768px) {
+    width: 300px;
+  }
 `;
 export const Item = styled.li`
   font-weight: 500;
@@ -29,9 +30,6 @@ export const Item = styled.li`
   line-height: 1.5;
   letter-spacing: -0.01em;
   color: #b5b7c0;
-  /* @media screen and (min-width: 768px) {
-    
-  } */
 `;
 export const Text = styled.span`
   font-weight: 500;
@@ -40,14 +38,12 @@ export const Text = styled.span`
   letter-spacing: -0.01em;
   margin-left: 5px;
   color: #292d32;
-  /* @media screen and (min-width: 768px) {
-    font-size: 14px;
-  } */
 `;
 export const Status = styled.span`
-  width: 80px;
-  height: 29px;
-  padding: 2px 6px;
+  display: inline-block;
+  text-align: center;
+  width: 55px;
+  padding: 2px 4px;
   background-color: ${p =>
     p.isActive === 'Active'
       ? 'rgba(22, 192, 152, 0.38)'
@@ -64,7 +60,10 @@ export const Status = styled.span`
   letter-spacing: -0.01em;
   margin-left: 120px;
 
-  /* @media screen and (min-width: 768px) {
-    font-size: 14px;
-  } */
+  @media screen and (min-width: 1440px) {
+    width: 80px;
+    padding: 4px 12px;
+    text-align: center;
+    margin-left: 0;
+  }
 `;

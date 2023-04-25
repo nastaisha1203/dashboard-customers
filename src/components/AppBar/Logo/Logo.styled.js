@@ -26,15 +26,15 @@ export const Link = styled.a`
       stroke: #5932ea;
     }
   }
+  @media (min-width: 1440px) {
+    margin-bottom: 52px;
+    font-weight: 600;
+    font-size: 26px;
+    letter-spacing: 1%;
+  }
 `;
 
 export const LogoContainer = styled.div`
   @media (min-width: 1440px) {
-    margin-right: 187px;
   }
 `;
-// export const Text = styled.span`
-//   @media (min-width: 1440px) {
-//     margin-right: 187px;
-//   }
-// `;

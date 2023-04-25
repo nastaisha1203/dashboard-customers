@@ -7,18 +7,11 @@ export const Nav = styled.ul`
   gap: 22px;
 
   @media (min-width: 768px) {
-    gap: 32px;
+    gap: 30px;
   }
   @media (min-width: 1440px) {
-    gap: 40px;
+    gap: 17px;
   }
-
-  /* @media (min-width: ) {
-    display: flex;
-    flex-direction: row;
-    gap: 30px;
-    margin-right: auto;
-  } */
 `;
 
 export const Link = styled.li`
@@ -34,6 +27,7 @@ export const Link = styled.li`
   letter-spacing: -0.02em;
   color: #9197b3;
   border-radius: 8px;
+  cursor: pointer;
 
   svg {
     width: 20px;

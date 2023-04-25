@@ -1,5 +1,5 @@
 import { User } from 'components/User/User';
-import { Layout } from './App.styled';
+import customers from '../../customers.json';
 import { AppBar } from 'components/AppBar/AppBar';
 import { Customers } from 'components/Customers/Customers';
 import { useState } from 'react';
@@ -9,6 +9,8 @@ import { Navigation } from 'components/AppBar/Navigation/Navigation';
 import sprite from 'img/sprite.svg';
 import { BurgerMenu } from 'components/BurgerMenu/BurgerMenu';
 import {
+  Layout,
+  DesktopDisplay,
   Button,
   Modal,
   HeaderModal,
@@ -16,10 +18,23 @@ import {
   SectionModal,
   Wrapper,
   Text,
+  CustomersSection,
+  AppbarSection,
+  Container,
 } from './App.styled';
 
 export const App = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const filteredItems = customers.filter(customer =>
+    Object.values(customer).some(
+      value =>
+        value !== null &&
+        value.toString().toLowerCase().includes(searchTerm.toLowerCase())
+    )
+  );
+  const onChange = e => setSearchTerm(e.target.value);
   const toggleOpenBurger = e => {
     setOpenMenu(!openMenu);
   };
@@ -30,21 +45,31 @@ export const App = () => {
     <>
       <Layout>
         {isDesktop ? (
-          <div>
-            <AppBar />
-            <div>
-              <p>Hello Evano 👋🏼,</p>
-              <Customers />
-            </div>
-          </div>
+          <DesktopDisplay>
+            <AppbarSection>
+              <AppBar />
+            </AppbarSection>
+            <CustomersSection>
+              <Text>Hello Evano 👋🏼,</Text>
+              <Customers
+                customers={filteredItems}
+                onChange={onChange}
+                searchTerm={searchTerm}
+              />
+            </CustomersSection>
+          </DesktopDisplay>
         ) : (
-          <div>
+          <Container>
             <Wrapper>
               <Text>Hello Evano 👋🏼,</Text>
               <BurgerMenu onClick={toggleOpenBurger} />
             </Wrapper>
-            <Customers />
-          </div>
+            <Customers
+              customers={filteredItems}
+              onChange={onChange}
+              searchTerm={searchTerm}
+            />
+          </Container>
         )}
       </Layout>
       <GlobalStyle isOpen={openMenu} />

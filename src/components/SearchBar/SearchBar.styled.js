@@ -3,35 +3,26 @@ import styled from 'styled-components';
 export const SearchForm = styled.form`
   display: flex;
   gap: 8px;
+  padding-left: 8px;
   align-items: center;
-  justify-content: center;
-  max-width: 216px;
-  background-color: #fff;
+  min-width: 216px;
+  height: 38px;
   border-radius: 10px;
   margin-top: 15px;
   background-color: #f9fbff;
-  /* overflow: hidden; */
-`;
-
-export const SearchButton = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  border: none;
-  width: 18px;
-  height: 18px;
-  background-color: transparent;
+  @media screen and (min-width: 1440px) {
+    margin-top: 0;
+  }
   & svg {
     width: 15px;
     height: 15px;
+    @media screen and (min-width: 1440px) {
+      width: 24px;
+      height: 24px;
+    }
   }
-  /* transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1); */
-  /* outline: none; */
-  /* &:hover {
-    opacity: 1;
-  } */
 `;
+
 export const SearchInput = styled.input`
   font: inherit;
   background-color: #f9fbff;
@@ -40,8 +31,7 @@ export const SearchInput = styled.input`
   border: none;
   outline: none;
   border-radius: 10px;
-  /* &::placeholder {
-    font: inherit;
-    font-size: 10px;
-  } */
+  &::placeholder {
+    color: rgba(181, 183, 192, 1);
+  }
 `;
